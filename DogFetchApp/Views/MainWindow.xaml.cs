@@ -1,4 +1,6 @@
 ﻿using DogFetchApp.ViewModels;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace DogFetchApp
@@ -18,6 +20,19 @@ namespace DogFetchApp
             currentViewmodel = new MainViewModel();
 
             DataContext = currentViewmodel;
+
+            Task.Run(() => currentViewmodel.LoadBreeds());
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //await currentViewmodel.LoadBreeds();
+            /*myCbox.ItemsSource = currentViewmodel.Breeds;
+            myCbox.SelectedItem = currentViewmodel.SelectedBreed;
+
+            myCbox2.SelectedItem = currentViewmodel.SelectedAmount;*/
+            /*SelectedItem = "{Binding SomeBindingPropertySelectedCurrently, 
+                    Mode = TwoWay, UpdateSourceTrigger = PropertyChanged}"*/
         }
     }
 }

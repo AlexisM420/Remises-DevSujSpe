@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Accessibility;
+using System;
 using System.Windows.Input;
 
 namespace DogFetchApp.Commands
@@ -6,6 +7,7 @@ namespace DogFetchApp.Commands
     public class DelegateCommand<T> : ICommand
     {
         private readonly Predicate<T> _canExecute;
+        
         private readonly Action<T> _execute;
 
         public DelegateCommand(Action<T> execute)

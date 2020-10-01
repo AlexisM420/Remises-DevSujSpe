@@ -62,7 +62,6 @@ namespace DogFetchApp.Commands
         #region ICommand methods implementation
         public bool CanExecute(object parameter)
         {
-
             return CanExecute((T)parameter);
         }
 
